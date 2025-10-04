@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "HabitDuel",
+    "subtitle": "Built with Zara",
+    "description": "HabitDuel is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app",
+    "splashImageUrl": "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app/image.png",
+    "tagline": "HabitDuel",
+    "screenshotUrls": [
+      "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app/screenshot.png",
+      "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://38244e0bd7da4068bd96d08bfbfbcd9c-f8z1.vercel.app/api/webhook"
+  }
+}
