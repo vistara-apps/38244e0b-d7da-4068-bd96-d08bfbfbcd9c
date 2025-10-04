@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cyberpunk Gaming Theme */
+  --color-bg: #1a0b2e;
+  --color-fg: #ffffff;
+  --color-accent: #00ff41;
+  --color-primary: #7c3aed;
+  --color-surface: #2d1b4e;
+  --color-surface-hover: #3d2b5e;
+  --color-text-muted: #a78bfa;
+  --color-success: #00ff41;
+  --color-error: #ff0055;
+  --color-warning: #ffaa00;
+  --color-streak-fire: #ff4500;
+}
+
+@layer base {
+  * {
+    @apply border-purple-500;
+  }
+  
+  body {
+    @apply bg-bg text-fg;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface backdrop-blur-sm border border-primary/30 rounded-lg;
+  }
+
+  .neon-border {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent), inset 0 0 10px var(--color-accent);
+  }
+
+  .cyber-button {
+    @apply relative px-6 py-3 font-bold text-bg bg-accent rounded-md overflow-hidden;
+    @apply transition-all duration-200 hover:bg-accent/90 hover:shadow-glow;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  }
+
+  .cyber-button-secondary {
+    @apply relative px-6 py-3 font-bold text-accent bg-transparent border-2 border-accent rounded-md;
+    @apply transition-all duration-200 hover:bg-accent/10 hover:shadow-glow;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  }
+
+  .stat-card {
+    @apply glass-card p-6 hover:bg-surface-hover transition-all duration-200;
+    @apply border-l-4 border-l-accent;
+  }
+
+  .duel-card {
+    @apply glass-card p-4 hover:border-accent/50 transition-all duration-200;
+    @apply relative overflow-hidden;
+  }
+
+  .duel-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .energy-orb {
+    @apply w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary;
+    @apply flex items-center justify-center text-bg font-bold;
+    box-shadow: 0 0 20px var(--color-accent);
+  }
+
+  .energy-orb.empty {
+    @apply bg-surface border-2 border-text-muted/30;
+    box-shadow: none;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--color-accent);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
